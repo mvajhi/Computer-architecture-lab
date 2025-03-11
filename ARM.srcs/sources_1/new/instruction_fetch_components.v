@@ -3,7 +3,7 @@ module mux2to1(
     input [31:0] branch_address,
     input branch_taken,
     output [31:0] pc
-};
+);
     assign pc = branch_taken ? branch_address : next_pc;    
 endmodule
 
@@ -11,7 +11,7 @@ module pc_register(
     input clk, rst, 
     input [31:0] pc_in,
     input freeze,
-    output [31:0] pc_out
+    output reg [31:0] pc_out
 );
     always @(posedge clk) begin
         if(rst)
@@ -44,7 +44,7 @@ module if_comp_top(
     wire [31:0] pc_to_adder;
     pc_register pcreg(clk, rst, mux_to_pc, freeze, pc_to_adder);
     
-    assign pc_to_im[31:0] = pc_to_adder[31:0]
+    assign pc_to_im[31:0] = pc_to_adder[31:0];
     
     adder pc_adder(pc_to_adder, 1, next_pc);
     

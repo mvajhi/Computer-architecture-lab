@@ -14,9 +14,9 @@
       "xlconcat_0": "",
       "Register_1": "",
       "Register_2": "",
-      "if_comp_top_0": "",
       "Register_3": "",
-      "Register_4": ""
+      "Register_4": "",
+      "if_comp_top_0": ""
     },
     "ports": {
       "clk": {
@@ -229,58 +229,6 @@
           }
         }
       },
-      "if_comp_top_0": {
-        "vlnv": "xilinx.com:module_ref:if_comp_top:1.0",
-        "xci_name": "instruction_memory_if_comp_top_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "if_comp_top",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "clk": {
-            "type": "clk",
-            "direction": "I",
-            "parameters": {
-              "ASSOCIATED_RESET": {
-                "value": "rst",
-                "value_src": "constant"
-              }
-            }
-          },
-          "rst": {
-            "type": "rst",
-            "direction": "I",
-            "parameters": {
-              "POLARITY": {
-                "value": "ACTIVE_LOW",
-                "value_src": "user_prop"
-              }
-            }
-          },
-          "freeze": {
-            "direction": "I"
-          },
-          "branch_taken": {
-            "direction": "I"
-          },
-          "branch_address": {
-            "direction": "I",
-            "left": "31",
-            "right": "0"
-          },
-          "adder_res": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          },
-          "pc_to_im": {
-            "direction": "O",
-            "left": "31",
-            "right": "0"
-          }
-        }
-      },
       "Register_3": {
         "vlnv": "xilinx.com:module_ref:Register:1.0",
         "xci_name": "instruction_memory_Register_2_0",
@@ -384,6 +332,58 @@
             "right": "0"
           }
         }
+      },
+      "if_comp_top_0": {
+        "vlnv": "xilinx.com:module_ref:if_comp_top:1.0",
+        "xci_name": "instruction_memory_if_comp_top_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "if_comp_top",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "clk": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "rst",
+                "value_src": "constant"
+              }
+            }
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "user_prop"
+              }
+            }
+          },
+          "freeze": {
+            "direction": "I"
+          },
+          "branch_taken": {
+            "direction": "I"
+          },
+          "branch_address": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "adder_res": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          },
+          "pc_to_im": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -392,9 +392,9 @@
           "rst",
           "Register_1/rst",
           "Register_2/rst",
-          "if_comp_top_0/rst",
           "Register_3/rst",
-          "Register_4/rst"
+          "Register_4/rst",
+          "if_comp_top_0/rst"
         ]
       },
       "if_comp_top_0_pc_to_im": {
@@ -448,9 +448,9 @@
           "blk_mem_gen_0/clka",
           "Register_1/clk",
           "Register_2/clk",
-          "if_comp_top_0/clk",
           "Register_3/clk",
-          "Register_4/clk"
+          "Register_4/clk",
+          "if_comp_top_0/clk"
         ]
       },
       "branch_address_1": {
@@ -464,9 +464,9 @@
           "freeze",
           "Register_1/freeze",
           "Register_2/freeze",
-          "if_comp_top_0/freeze",
           "Register_4/freeze",
-          "Register_3/freeze"
+          "Register_3/freeze",
+          "if_comp_top_0/freeze"
         ]
       },
       "branch_taken_1": {
