@@ -21,12 +21,16 @@
       "Register_2": "",
       "Register_3": "",
       "Register_4": "",
+<<<<<<< HEAD
       "reg_file_0": "",
       "xlconcat_1": "",
       "xlconstant_4": "",
       "dist_mem_gen_0": "",
       "if_comp_top_1": "",
       "instruction_decode_c_0": ""
+=======
+      "if_comp_top_0": ""
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
     },
     "ports": {
       "clk": {
@@ -384,6 +388,7 @@
           }
         }
       },
+<<<<<<< HEAD
       "reg_file_0": {
         "vlnv": "xilinx.com:module_ref:reg_file:1.0",
         "xci_name": "instruction_memory_reg_file_0_0",
@@ -535,6 +540,11 @@
       "if_comp_top_1": {
         "vlnv": "xilinx.com:module_ref:if_comp_top:1.0",
         "xci_name": "instruction_memory_if_comp_top_1_0",
+=======
+      "if_comp_top_0": {
+        "vlnv": "xilinx.com:module_ref:if_comp_top:1.0",
+        "xci_name": "instruction_memory_if_comp_top_0_0",
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         "reference_info": {
           "ref_type": "hdl",
           "ref_name": "if_comp_top",
@@ -553,7 +563,17 @@
           },
           "rst": {
             "type": "rst",
+<<<<<<< HEAD
             "direction": "I"
+=======
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_LOW",
+                "value_src": "user_prop"
+              }
+            }
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
           },
           "freeze": {
             "direction": "I"
@@ -577,6 +597,7 @@
             "right": "0"
           }
         }
+<<<<<<< HEAD
       },
       "instruction_decode_c_0": {
         "vlnv": "xilinx.com:module_ref:instruction_decode_components:1.0",
@@ -672,6 +693,8 @@
             "right": "0"
           }
         }
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
       }
     },
     "nets": {
@@ -683,8 +706,12 @@
           "Register_2/rst",
           "Register_3/rst",
           "Register_4/rst",
+<<<<<<< HEAD
           "reg_file_0/rst",
           "if_comp_top_1/rst"
+=======
+          "if_comp_top_0/rst"
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         ]
       },
       "Net2": {
@@ -741,8 +768,12 @@
           "Register_2/clk",
           "Register_3/clk",
           "Register_4/clk",
+<<<<<<< HEAD
           "reg_file_0/clk",
           "if_comp_top_1/clk"
+=======
+          "if_comp_top_0/clk"
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         ]
       },
       "rst_2": {
@@ -753,8 +784,17 @@
       },
       "Register_1_reg_out": {
         "ports": [
+<<<<<<< HEAD
           "Register_1/reg_out",
           "instruction_decode_c_0/if_in"
+=======
+          "freeze",
+          "Register_1/freeze",
+          "Register_2/freeze",
+          "Register_4/freeze",
+          "Register_3/freeze",
+          "if_comp_top_0/freeze"
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         ]
       },
       "instruction_decode_c_0_r1": {

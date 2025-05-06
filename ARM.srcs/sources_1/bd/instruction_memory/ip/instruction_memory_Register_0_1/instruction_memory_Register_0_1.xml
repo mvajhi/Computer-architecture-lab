@@ -112,6 +112,7 @@
   <spirit:model>
     <spirit:views>
       <spirit:view>
+<<<<<<< HEAD
         <spirit:name>xilinx_anylanguagesynthesis</spirit:name>
         <spirit:displayName>Synthesis</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:synthesis</spirit:envIdentifier>
@@ -144,6 +145,8 @@
         </spirit:parameters>
       </spirit:view>
       <spirit:view>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         <spirit:name>xilinx_anylanguagebehavioralsimulation</spirit:name>
         <spirit:displayName>Simulation</spirit:displayName>
         <spirit:envIdentifier>:vivado.xilinx.com:simulation</spirit:envIdentifier>
@@ -167,7 +170,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue Apr 15 13:19:38 UTC 2025</spirit:value>
+=======
+            <spirit:value>Tue Mar 11 13:59:01 UTC 2025</spirit:value>
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -175,6 +182,7 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
+<<<<<<< HEAD
       <spirit:view>
         <spirit:name>xilinx_externalfiles</spirit:name>
         <spirit:displayName>External Files</spirit:displayName>
@@ -193,6 +201,8 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
     </spirit:views>
     <spirit:ports>
       <spirit:port>
@@ -202,7 +212,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -215,7 +228,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -228,7 +244,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -241,7 +260,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -258,7 +280,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -275,7 +300,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>reg</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_anylanguagesynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_anylanguagebehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -292,6 +320,7 @@
   </spirit:model>
   <spirit:fileSets>
     <spirit:fileSet>
+<<<<<<< HEAD
       <spirit:name>xilinx_verilogsynthesiswrapper_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>synth/instruction_memory_Register_0_1.v</spirit:name>
@@ -300,6 +329,8 @@
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
       <spirit:name>xilinx_verilogsimulationwrapper_view_fileset</spirit:name>
       <spirit:file>
         <spirit:name>sim/instruction_memory_Register_0_1.v</spirit:name>
@@ -307,6 +338,7 @@
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
+<<<<<<< HEAD
     <spirit:fileSet>
       <spirit:name>xilinx_externalfiles_view_fileset</spirit:name>
       <spirit:file>
@@ -343,6 +375,8 @@
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
   </spirit:fileSets>
   <spirit:description>xilinx.com:module_ref:Register:1.0</spirit:description>
   <spirit:parameters>

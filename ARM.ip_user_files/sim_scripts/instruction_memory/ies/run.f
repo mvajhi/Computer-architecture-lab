@@ -1,9 +1,20 @@
+<<<<<<< HEAD
 -makelib ies_lib/xil_defaultlib -sv \
   "C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
   "C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_memory/hdl/xpm_memory.sv" \
 -endlib
 -makelib ies_lib/xpm \
   "C:/Xilinx/Vivado/2018.3/data/ip/xpm/xpm_VCOMP.vhd" \
+=======
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/instruction_memory/ip/instruction_memory_if_comp_top_0_0/sim/instruction_memory_if_comp_top_0_0.v" \
+-endlib
+-makelib ies_lib/blk_mem_gen_v8_4_2 \
+  "../../../../ARM.srcs/sources_1/bd/instruction_memory/ipshared/37c2/simulation/blk_mem_gen_v8_4.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/instruction_memory/ip/instruction_memory_blk_mem_gen_0_0/sim/instruction_memory_blk_mem_gen_0_0.v" \
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
 -endlib
 -makelib ies_lib/xlslice_v1_0_1 \
   "../../../../ARM.srcs/sources_1/bd/instruction_memory/ipshared/f3db/hdl/xlslice_v1_0_vl_rfs.v" \
@@ -21,6 +32,7 @@
   "../../../bd/instruction_memory/sim/instruction_memory.v" \
   "../../../bd/instruction_memory/ip/instruction_memory_Register_2_0/sim/instruction_memory_Register_2_0.v" \
   "../../../bd/instruction_memory/ip/instruction_memory_Register_2_1/sim/instruction_memory_Register_2_1.v" \
+<<<<<<< HEAD
   "../../../bd/instruction_memory/ip/instruction_memory_ila_0_1/sim/instruction_memory_ila_0_1.v" \
 -endlib
 -makelib ies_lib/xlconstant_v1_1_5 \
@@ -43,6 +55,8 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/instruction_memory/ip/instruction_memory_dist_mem_gen_0_0/sim/instruction_memory_dist_mem_gen_0_0.v" \
   "../../../bd/instruction_memory/ip/instruction_memory_if_comp_top_1_0/sim/instruction_memory_if_comp_top_1_0.v" \
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v

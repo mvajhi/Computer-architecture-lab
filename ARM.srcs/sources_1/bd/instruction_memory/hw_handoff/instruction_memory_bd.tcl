@@ -40,7 +40,11 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
+<<<<<<< HEAD
 # Register, Register, Register, Register, debouncer, if_comp_top, instruction_decode_components, reg_file
+=======
+# Register, Register, Register, Register, if_comp_top
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -164,10 +168,23 @@ proc create_root_design { parentCell } {
   # Create interface ports
 
   # Create ports
+<<<<<<< HEAD
   set clk [ create_bd_port -dir I clk ]
   set hazard [ create_bd_port -dir I hazard ]
   set rst [ create_bd_port -dir I -from 0 -to 0 rst ]
   set status [ create_bd_port -dir I -from 3 -to 0 status ]
+=======
+  set branch_address [ create_bd_port -dir I -from 31 -to 0 branch_address ]
+  set branch_taken [ create_bd_port -dir I branch_taken ]
+  set clk [ create_bd_port -dir I clk ]
+  set flush [ create_bd_port -dir I flush ]
+  set freeze [ create_bd_port -dir I freeze ]
+  set reg_out [ create_bd_port -dir O -from 63 -to 0 reg_out ]
+  set rst [ create_bd_port -dir I -type rst rst ]
+  set_property -dict [ list \
+   CONFIG.POLARITY {ACTIVE_LOW} \
+ ] $rst
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
 
   # Create instance: Register_1, and set properties
   set block_name Register
@@ -225,6 +242,7 @@ proc create_root_design { parentCell } {
    CONFIG.size {64} \
  ] $Register_4
 
+<<<<<<< HEAD
   # Create instance: debouncer_0, and set properties
   set block_name debouncer
   set block_cell_name debouncer_0
@@ -295,6 +313,33 @@ proc create_root_design { parentCell } {
      catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    } elseif { $reg_file_0 eq "" } {
+=======
+  # Create instance: blk_mem_gen_0, and set properties
+  set blk_mem_gen_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:blk_mem_gen:8.4 blk_mem_gen_0 ]
+  set_property -dict [ list \
+   CONFIG.Additional_Inputs_for_Power_Estimation {false} \
+   CONFIG.Byte_Size {9} \
+   CONFIG.Coe_File {../../../../new/output.coe} \
+   CONFIG.EN_SAFETY_CKT {false} \
+   CONFIG.Enable_32bit_Address {false} \
+   CONFIG.Enable_A {Always_Enabled} \
+   CONFIG.Load_Init_File {true} \
+   CONFIG.Memory_Type {Single_Port_ROM} \
+   CONFIG.Port_A_Write_Rate {0} \
+   CONFIG.Register_PortA_Output_of_Memory_Primitives {true} \
+   CONFIG.Use_Byte_Write_Enable {false} \
+   CONFIG.Use_RSTA_Pin {false} \
+   CONFIG.use_bram_block {Stand_Alone} \
+ ] $blk_mem_gen_0
+
+  # Create instance: if_comp_top_0, and set properties
+  set block_name if_comp_top
+  set block_cell_name if_comp_top_0
+  if { [catch {set if_comp_top_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $if_comp_top_0 eq "" } {
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
      catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
      return 1
    }
@@ -306,6 +351,7 @@ proc create_root_design { parentCell } {
    CONFIG.IN1_WIDTH {32} \
  ] $xlconcat_0
 
+<<<<<<< HEAD
   # Create instance: xlconcat_1, and set properties
   set xlconcat_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlconcat:2.1 xlconcat_1 ]
   set_property -dict [ list \
@@ -360,6 +406,8 @@ proc create_root_design { parentCell } {
    CONFIG.CONST_VAL {0} \
  ] $xlconstant_4
 
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
   # Create instance: xlslice_0, and set properties
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
@@ -369,6 +417,7 @@ proc create_root_design { parentCell } {
  ] $xlslice_0
 
   # Create port connections
+<<<<<<< HEAD
   connect_bd_net -net Net [get_bd_ports clk] [get_bd_pins Register_1/clk] [get_bd_pins Register_2/clk] [get_bd_pins Register_3/clk] [get_bd_pins Register_4/clk] [get_bd_pins debouncer_0/CLK_I] [get_bd_pins if_comp_top_1/clk] [get_bd_pins ila_0/clk] [get_bd_pins reg_file_0/clk]
   connect_bd_net -net Net2 [get_bd_pins Register_1/flush] [get_bd_pins Register_2/flush] [get_bd_pins Register_3/flush] [get_bd_pins Register_4/flush] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net Register_1_reg_out [get_bd_pins Register_1/reg_out] [get_bd_pins instruction_decode_c_0/if_in]
@@ -406,6 +455,23 @@ proc create_root_design { parentCell } {
   connect_bd_net -net xlconstant_3_dout [get_bd_pins if_comp_top_1/branch_address] [get_bd_pins xlconstant_3/dout]
   connect_bd_net -net xlconstant_4_dout [get_bd_pins reg_file_0/write_enable] [get_bd_pins xlconstant_4/dout]
   connect_bd_net -net xlslice_0_Dout [get_bd_pins dist_mem_gen_0/a] [get_bd_pins xlslice_0/Dout]
+=======
+  connect_bd_net -net Net [get_bd_ports clk] [get_bd_pins Register_1/clk] [get_bd_pins Register_2/clk] [get_bd_pins Register_3/clk] [get_bd_pins Register_4/clk] [get_bd_pins blk_mem_gen_0/clka] [get_bd_pins if_comp_top_0/clk]
+  connect_bd_net -net Net2 [get_bd_ports flush] [get_bd_pins Register_1/flush] [get_bd_pins Register_2/flush] [get_bd_pins Register_3/flush] [get_bd_pins Register_4/flush]
+  connect_bd_net -net Register_1_reg_out [get_bd_pins Register_1/reg_out] [get_bd_pins Register_2/reg_in]
+  connect_bd_net -net Register_2_reg_out [get_bd_pins Register_2/reg_out] [get_bd_pins Register_3/reg_in]
+  connect_bd_net -net Register_3_reg_out [get_bd_pins Register_3/reg_out] [get_bd_pins Register_4/reg_in]
+  connect_bd_net -net Register_4_reg_out [get_bd_ports reg_out] [get_bd_pins Register_4/reg_out]
+  connect_bd_net -net blk_mem_gen_0_douta [get_bd_pins blk_mem_gen_0/douta] [get_bd_pins xlconcat_0/In0]
+  connect_bd_net -net branch_address_1 [get_bd_ports branch_address] [get_bd_pins if_comp_top_0/branch_address]
+  connect_bd_net -net branch_taken_1 [get_bd_ports branch_taken] [get_bd_pins if_comp_top_0/branch_taken]
+  connect_bd_net -net freeze_1 [get_bd_ports freeze] [get_bd_pins Register_1/freeze] [get_bd_pins Register_2/freeze] [get_bd_pins Register_3/freeze] [get_bd_pins Register_4/freeze] [get_bd_pins if_comp_top_0/freeze]
+  connect_bd_net -net if_comp_top_0_adder_res [get_bd_pins if_comp_top_0/adder_res] [get_bd_pins xlconcat_0/In1]
+  connect_bd_net -net if_comp_top_0_pc_to_im [get_bd_pins if_comp_top_0/pc_to_im] [get_bd_pins xlslice_0/Din]
+  connect_bd_net -net rst_1 [get_bd_ports rst] [get_bd_pins Register_1/rst] [get_bd_pins Register_2/rst] [get_bd_pins Register_3/rst] [get_bd_pins Register_4/rst] [get_bd_pins if_comp_top_0/rst]
+  connect_bd_net -net xlconcat_0_dout [get_bd_pins Register_1/reg_in] [get_bd_pins xlconcat_0/dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins blk_mem_gen_0/addra] [get_bd_pins xlslice_0/Dout]
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
 
   # Create address segments
 

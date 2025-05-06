@@ -18,7 +18,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue Mar 11 14:09:20 UTC 2025</spirit:value>
+=======
+            <spirit:value>Tue Mar 11 13:59:01 UTC 2025</spirit:value>
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -38,7 +42,11 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>GENtimestamp</spirit:name>
+<<<<<<< HEAD
             <spirit:value>Tue Mar 11 14:09:20 UTC 2025</spirit:value>
+=======
+            <spirit:value>Tue Mar 11 13:59:01 UTC 2025</spirit:value>
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
           </spirit:parameter>
           <spirit:parameter>
             <spirit:name>outputProductCRC</spirit:name>
@@ -46,6 +54,7 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
+<<<<<<< HEAD
       <spirit:view>
         <spirit:name>xilinx_verilogsynthesis</spirit:name>
         <spirit:displayName>Verilog Synthesis</spirit:displayName>
@@ -86,6 +95,8 @@
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
     </spirit:views>
     <spirit:ports>
       <spirit:port>
@@ -99,7 +110,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -116,7 +130,10 @@
           <spirit:wireTypeDefs>
             <spirit:wireTypeDef>
               <spirit:typeName>std_logic_vector</spirit:typeName>
+<<<<<<< HEAD
               <spirit:viewNameRef>xilinx_verilogsynthesis</spirit:viewNameRef>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
               <spirit:viewNameRef>xilinx_verilogbehavioralsimulation</spirit:viewNameRef>
             </spirit:wireTypeDef>
           </spirit:wireTypeDefs>
@@ -159,6 +176,7 @@
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
+<<<<<<< HEAD
     <spirit:fileSet>
       <spirit:name>xilinx_verilogsynthesis_view_fileset</spirit:name>
       <spirit:file>
@@ -175,6 +193,8 @@
         <spirit:logicalName>xil_defaultlib</spirit:logicalName>
       </spirit:file>
     </spirit:fileSet>
+=======
+>>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
   </spirit:fileSets>
   <spirit:description>Slices a number of bits off of Din input. dout = din[from_position : to_position]</spirit:description>
   <spirit:parameters>
