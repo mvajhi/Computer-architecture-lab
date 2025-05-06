@@ -28,8 +28,8 @@ module Register #(parameter size=32)(
     input [size-1:0] reg_in,
     output reg [size-1:0] reg_out
     );
-    always @(posedge clk)begin
-        if(rst) begin
+    always @(posedge clk, negedge rst)begin
+        if(~rst) begin
             reg_out <= 32'b0;
         end
         else if(flush) begin

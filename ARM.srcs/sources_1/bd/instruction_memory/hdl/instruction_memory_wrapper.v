@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Tue Mar 11 17:00:01 2025
+//Date        : Tue May  6 15:38:57 2025
 //Host        : DESKTOP-H8247UF running 64-bit major release  (build 9200)
 //Command     : generate_target instruction_memory_wrapper.bd
 //Design      : instruction_memory_wrapper
@@ -10,35 +10,23 @@
 `timescale 1 ps / 1 ps
 
 module instruction_memory_wrapper
-   (branch_address,
-    branch_taken,
-    clk,
-    flush,
-    freeze,
-    reg_out,
-    rst);
-  input [31:0]branch_address;
-  input branch_taken;
+   (clk,
+    hazard,
+    rst,
+    status);
   input clk;
-  input flush;
-  input freeze;
-  output [63:0]reg_out;
-  input rst;
+  input hazard;
+  input [0:0]rst;
+  input [3:0]status;
 
-  wire [31:0]branch_address;
-  wire branch_taken;
   wire clk;
-  wire flush;
-  wire freeze;
-  wire [63:0]reg_out;
-  wire rst;
+  wire hazard;
+  wire [0:0]rst;
+  wire [3:0]status;
 
   instruction_memory instruction_memory_i
-       (.branch_address(branch_address),
-        .branch_taken(branch_taken),
-        .clk(clk),
-        .flush(flush),
-        .freeze(freeze),
-        .reg_out(reg_out),
-        .rst(rst));
+       (.clk(clk),
+        .hazard(hazard),
+        .rst(rst),
+        .status(status));
 endmodule
