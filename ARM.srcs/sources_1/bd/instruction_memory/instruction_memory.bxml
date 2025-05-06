@@ -2,37 +2,12 @@
 <Root MajorVersion="0" MinorVersion="36">
   <CompositeFile CompositeFileTopName="instruction_memory" CanBeSetAsTop="false" CanDisplayChildGraph="true">
     <Description>Composite Fileset</Description>
-<<<<<<< HEAD
-    <Generation Name="SYNTHESIS" State="GENERATED" Timestamp="1746533338"/>
-    <Generation Name="IMPLEMENTATION" State="GENERATED" Timestamp="1746533338"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1746533338"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1746533338"/>
+    <Generation Name="SYNTHESIS" State="RESET" Timestamp="1746541921"/>
+    <Generation Name="IMPLEMENTATION" State="RESET" Timestamp="1746541921"/>
+    <Generation Name="SIMULATION" State="RESET" Timestamp="1746541921"/>
+    <Generation Name="HW_HANDOFF" State="RESET" Timestamp="1746541921"/>
     <FileCollection Name="SOURCES" Type="SOURCES">
       <File Name="ip\instruction_memory_xlslice_0_0\instruction_memory_xlslice_0_0.xci" Type="IP">
-=======
-    <Generation Name="SYNTHESIS" State="STALE" Timestamp="1741701634"/>
-    <Generation Name="IMPLEMENTATION" State="STALE" Timestamp="1741701634"/>
-    <Generation Name="SIMULATION" State="GENERATED" Timestamp="1741701634"/>
-    <Generation Name="HW_HANDOFF" State="GENERATED" Timestamp="1741701634"/>
-    <FileCollection Name="SOURCES" Type="SOURCES">
-      <File Name="ip/instruction_memory_if_comp_top_0_0/instruction_memory_if_comp_top_0_0.xci" Type="IP">
-        <Instance HierarchyPath="if_comp_top_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/instruction_memory_blk_mem_gen_0_0/instruction_memory_blk_mem_gen_0_0.xci" Type="IP">
-        <Instance HierarchyPath="blk_mem_gen_0"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip/instruction_memory_xlslice_0_0/instruction_memory_xlslice_0_0.xci" Type="IP">
->>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         <Instance HierarchyPath="xlslice_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -40,15 +15,14 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/instruction_memory_Register_0_1/instruction_memory_Register_0_1.xci" Type="IP">
-        <Instance HierarchyPath="Register_1"/>
+      <File Name="ip\instruction_memory_Register_0_1\instruction_memory_Register_0_1.xci" Type="IP">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/instruction_memory_xlconcat_0_0/instruction_memory_xlconcat_0_0.xci" Type="IP">
+      <File Name="ip\instruction_memory_xlconcat_0_0\instruction_memory_xlconcat_0_0.xci" Type="IP">
         <Instance HierarchyPath="xlconcat_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -56,7 +30,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/instruction_memory_Register_1_0/instruction_memory_Register_1_0.xci" Type="IP">
+      <File Name="ip\instruction_memory_Register_1_0\instruction_memory_Register_1_0.xci" Type="IP">
         <Instance HierarchyPath="Register_2"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -64,18 +38,18 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="synth/instruction_memory.v" Type="Verilog">
+      <File Name="synth\instruction_memory.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
         <UsedIn Val="IMPLEMENTATION"/>
       </File>
-      <File Name="sim/instruction_memory.v" Type="Verilog">
+      <File Name="sim\instruction_memory.v" Type="Verilog">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/instruction_memory_Register_2_0/instruction_memory_Register_2_0.xci" Type="IP">
+      <File Name="ip\instruction_memory_Register_2_0\instruction_memory_Register_2_0.xci" Type="IP">
         <Instance HierarchyPath="Register_3"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
@@ -83,8 +57,7 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip/instruction_memory_Register_2_1/instruction_memory_Register_2_1.xci" Type="IP">
-        <Instance HierarchyPath="Register_4"/>
+      <File Name="ip\instruction_memory_Register_2_1\instruction_memory_Register_2_1.xci" Type="IP">
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -131,14 +104,6 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
-      <File Name="ip\instruction_memory_xlconstant_2_0\instruction_memory_xlconstant_2_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconstant_3"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
       <File Name="ip\instruction_memory_reg_file_0_0\instruction_memory_reg_file_0_0.xci" Type="IP">
         <Instance HierarchyPath="reg_file_0"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
@@ -157,14 +122,6 @@
       </File>
       <File Name="ip\instruction_memory_xlconcat_1_0\instruction_memory_xlconcat_1_0.xci" Type="IP">
         <Instance HierarchyPath="xlconcat_1"/>
-        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
-        <Library Name="xil_defaultlib"/>
-        <UsedIn Val="SYNTHESIS"/>
-        <UsedIn Val="IMPLEMENTATION"/>
-        <UsedIn Val="SIMULATION"/>
-      </File>
-      <File Name="ip\instruction_memory_xlconstant_4_0\instruction_memory_xlconstant_4_0.xci" Type="IP">
-        <Instance HierarchyPath="xlconstant_4"/>
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="SYNTHESIS"/>
@@ -194,40 +151,144 @@
         <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="OUT_OF_CONTEXT"/>
       </File>
-<<<<<<< HEAD
       <File Name="hw_handoff\instruction_memory.hwh" Type="HwHandoff">
-=======
-      <File Name="hw_handoff/instruction_memory.hwh" Type="HwHandoff">
->>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
       </File>
-<<<<<<< HEAD
       <File Name="hw_handoff\instruction_memory_bd.tcl">
-=======
-      <File Name="hw_handoff/instruction_memory_bd.tcl">
->>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
       </File>
-<<<<<<< HEAD
       <File Name="synth\instruction_memory.hwdef">
-=======
-      <File Name="synth/instruction_memory.hwdef">
->>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
         <UsedIn Val="HW_HANDOFF"/>
       </File>
-<<<<<<< HEAD
       <File Name="sim\instruction_memory.protoinst">
-=======
-      <File Name="sim/instruction_memory.protoinst">
->>>>>>> 268e6318d9596da5fb388eb1d1158dd18f6a50e6
         <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="false" IsStatusTracked="false"/>
         <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_exe_stage_0_0\instruction_memory_exe_stage_0_0.xci" Type="IP">
+        <Instance HierarchyPath="exe_stage_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_xlconcat_2_0\instruction_memory_xlconcat_2_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_2"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_exe_splittre_0_1\instruction_memory_exe_splittre_0_1.xci" Type="IP">
+        <Instance HierarchyPath="exe_splittre_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_ms_splittre_0_0\instruction_memory_ms_splittre_0_0.xci" Type="IP">
+        <Instance HierarchyPath="ms_splittre_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_wbs_splittre_0_0\instruction_memory_wbs_splittre_0_0.xci" Type="IP">
+        <Instance HierarchyPath="wbs_splittre_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_status_reg_0_0\instruction_memory_status_reg_0_0.xci" Type="IP">
+        <Instance HierarchyPath="status_reg_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_xlslice_0_0_1\instruction_memory_xlslice_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlslice_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_xlconcat_0_0_1\instruction_memory_xlconcat_0_0.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_Register_1_1\instruction_memory_Register_1_1.xci" Type="IP">
+        <Instance HierarchyPath="Register_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_Register_4_0\instruction_memory_Register_4_0.xci" Type="IP">
+        <Instance HierarchyPath="Register_4"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_if_comp_top_1_0_1\instruction_memory_if_comp_top_1_0.xci" Type="IP">
+        <Instance HierarchyPath="if_comp_top_1"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_hazard_detection_unit_0_0\instruction_memory_hazard_detection_unit_0_0.xci" Type="IP">
+        <Instance HierarchyPath="hazard_detection_unit_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_mux_0_0\instruction_memory_mux_0_0.xci" Type="IP">
+        <Instance HierarchyPath="mux_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_memory_0_0\instruction_memory_memory_0_0.xci" Type="IP">
+        <Instance HierarchyPath="memory_0"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
+        <UsedIn Val="SIMULATION"/>
+      </File>
+      <File Name="ip\instruction_memory_xlconcat_2_1\instruction_memory_xlconcat_2_1.xci" Type="IP">
+        <Instance HierarchyPath="xlconcat_3"/>
+        <Properties IsEditable="false" IsVisible="true" Timestamp="0" IsTrackable="true" IsStatusTracked="true"/>
+        <Library Name="xil_defaultlib"/>
+        <UsedIn Val="SYNTHESIS"/>
+        <UsedIn Val="IMPLEMENTATION"/>
         <UsedIn Val="SIMULATION"/>
       </File>
     </FileCollection>

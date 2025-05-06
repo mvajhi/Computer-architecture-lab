@@ -1,6 +1,5 @@
 module instruction_decode_components (
-    input[31:0] pc,
-    input[31:0] instruction,
+    input[63:0] if_out,
     input[3:0] status,
     input hazard,
     output[3:0] rn,
@@ -19,8 +18,13 @@ module instruction_decode_components (
     output imm,
     output [11:0] shift_op,
     output [23:0] signed_imm,
-    output [3:0] dest
+    output [3:0] dest,
+    output carry_in
 );
+    wire [31:0] pc, instruction;
+    assign instruction = if_out[31:0];
+    assign pc = if_out[63:32];
+
     wire[3:0] cond = instruction[31:28];
     wire[1:0] mode = instruction[27:26];
     wire i = instruction[25];
@@ -58,16 +62,17 @@ module instruction_decode_components (
     wire [8:0] mux_cu = sel_cu ? out_cu : 9'b0;
 
     assign wb_en = mux_cu[8];
-    assign mem_r_en = mux_cu[7];
+    assign mem_r_en = out_cu[7];
     assign mem_w_en = mux_cu[6];
     assign exe_cmd = mux_cu[5:2];
     assign b = mux_cu[1];
     assign s_out = mux_cu[0];
 
     assign imm = i;
-    assign shift_op = instruction[11:0]
+    assign shift_op = instruction[11:0];
     assign signed_imm = instruction[23:0];
     assign dest = rd;
 
     assign pc_out = pc;
+    assign carry_in = status[1];
 endmodule

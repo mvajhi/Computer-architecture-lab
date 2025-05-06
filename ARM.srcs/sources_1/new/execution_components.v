@@ -84,8 +84,8 @@ module val2_gen (
     input mem_access,
     output reg [31:0] result
 );
-    reg [7:0] imm_val = shift_op[7:0];
-    reg [3:0] rotate_imm = shift_op[11:8];
+    wire [7:0] imm_val = shift_op[7:0];
+    wire [3:0] rotate_imm = shift_op[11:8];
     always @(*) begin
         if (imm == 1'b1) begin
             // Immediate value rotated
@@ -103,14 +103,13 @@ module exe_stage(
     input [3:0] exe_cmd,
     input mem_r_en,
     input mem_w_en,
-    input carry_in
+    input carry_in,
     input [31:0] pc,
     input [31:0] val_rn,
     input [31:0] val_rm,
     input imm,
     input [11:0] shift_operand,
     input [23:0] signed_imm_24,
-    input [3:0] sr,
     output [31:0] alu_result,
     output [31:0] br_addr,
     output [3:0] status
@@ -125,10 +124,10 @@ module exe_stage(
         .shift_op(shift_operand),
         .imm(imm),
         .mem_access(mem_access),
-        .result(val_2);
+        .result(val_2)
     );
     
-    br_addr = pc + singed_imm_24;
+    assign br_addr = pc + signed_imm_24;
 
     ALU alu (
         .a(val_rn),
