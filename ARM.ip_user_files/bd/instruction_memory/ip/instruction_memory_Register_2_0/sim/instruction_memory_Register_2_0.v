@@ -71,11 +71,11 @@ input wire clk;
 input wire rst;
 input wire flush;
 input wire freeze;
-input wire [63 : 0] reg_in;
-output wire [63 : 0] reg_out;
+input wire [70 : 0] reg_in;
+output wire [70 : 0] reg_out;
 
   Register #(
-    .size(64)
+    .size(71)
   ) inst (
     .clk(clk),
     .rst(rst),

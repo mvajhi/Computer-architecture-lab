@@ -71,6 +71,7 @@ module instruction_memory_xlconcat_1_0 (
   In14,
   In15,
   In16,
+  In17,
   dout
 );
 
@@ -91,7 +92,8 @@ input wire [23 : 0] In13;
 input wire [3 : 0] In14;
 input wire [31 : 0] In15;
 input wire [31 : 0] In16;
-output wire [158 : 0] dout;
+input wire [0 : 0] In17;
+output wire [159 : 0] dout;
 
   xlconcat_v2_1_1_xlconcat #(
     .IN0_WIDTH(4),
@@ -126,8 +128,8 @@ output wire [158 : 0] dout;
     .IN29_WIDTH(1),
     .IN30_WIDTH(1),
     .IN31_WIDTH(1),
-    .dout_width(159),
-    .NUM_PORTS(17)
+    .dout_width(160),
+    .NUM_PORTS(18)
   ) inst (
     .In0(In0),
     .In1(In1),
@@ -146,7 +148,7 @@ output wire [158 : 0] dout;
     .In14(In14),
     .In15(In15),
     .In16(In16),
-    .In17(1'B0),
+    .In17(In17),
     .In18(1'B0),
     .In19(1'B0),
     .In20(1'B0),

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ns
+`timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -27,9 +27,9 @@ module testbench();
     always #50 clk = ~clk;
     initial begin
         rst = 1'b0;
-        #500
+        #300
         rst = 1'b1;
-        #500000
+        #40000
         $stop;
     end
 

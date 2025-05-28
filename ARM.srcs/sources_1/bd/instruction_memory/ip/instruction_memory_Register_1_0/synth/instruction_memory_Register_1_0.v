@@ -52,7 +52,7 @@
 
 (* X_CORE_INFO = "Register,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "instruction_memory_Register_1_0,Register,{}" *)
-(* CORE_GENERATION_INFO = "instruction_memory_Register_1_0,Register,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=Register,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,size=64}" *)
+(* CORE_GENERATION_INFO = "instruction_memory_Register_1_0,Register,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=module_ref,x_ipName=Register,x_ipVersion=1.0,x_ipCoreRevision=1,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,size=160}" *)
 (* IP_DEFINITION_SOURCE = "module_ref" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module instruction_memory_Register_1_0 (
@@ -72,11 +72,11 @@ input wire clk;
 input wire rst;
 input wire flush;
 input wire freeze;
-input wire [63 : 0] reg_in;
-output wire [63 : 0] reg_out;
+input wire [159 : 0] reg_in;
+output wire [159 : 0] reg_out;
 
   Register #(
-    .size(64)
+    .size(160)
   ) inst (
     .clk(clk),
     .rst(rst),

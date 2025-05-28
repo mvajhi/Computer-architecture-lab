@@ -34,13 +34,13 @@ module reg_file(
 reg [31:0] in_memory [0:15];
 integer k;
 
-always @ (posedge clk, negedge rst, negedge write_enable) begin
+always @ (negedge clk, negedge rst) begin
     if(~rst) begin
         for(k = 0; k < 16; k = k + 1) begin
             in_memory[k] <= 32'b0;
         end
     end
-    else if(~write_enable) begin
+    else if(write_enable) begin
         in_memory[inst_dest] <= value_to_dest;
     end
 end

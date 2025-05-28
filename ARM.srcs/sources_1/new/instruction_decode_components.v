@@ -36,21 +36,19 @@ module instruction_decode_components (
     wire[1:0] shift = instruction[6:5];
     assign rm = instruction[3:0];
 
-    assign two_src = ~imm || mem_r_en;
+    assign two_src = ~imm || out_cu[7];
 
     wire out_cc;
     condition_check cc (
-        .cond(cond),
-        .status(status),
-        .out(out_cc)
+        .inst_cond(cond),
+        .status_reg_out(status),
+        .condition_out(out_cc)
     );
 
     wire [8:0] out_cu;
     control_unit cu (
-        .s(s),
-        .opcode(opcode),
-        .mode(mode),
-        .out(out_cu)
+        .instruction(instruction),
+        .cu_out(out_cu)
     );
 
     assign mux_reg = mem_w_en ? rd : rm;
@@ -59,10 +57,10 @@ module instruction_decode_components (
     assign r2 = mux_reg;
 
     wire sel_cu = ~out_cc || hazard;
-    wire [8:0] mux_cu = sel_cu ? out_cu : 9'b0;
+    wire [8:0] mux_cu = sel_cu ? 9'b0 : out_cu;
 
     assign wb_en = mux_cu[8];
-    assign mem_r_en = out_cu[7];
+    assign mem_r_en = mux_cu[7];
     assign mem_w_en = mux_cu[6];
     assign exe_cmd = mux_cu[5:2];
     assign b = mux_cu[1];

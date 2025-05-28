@@ -8,9 +8,7 @@ module ALU (
 );
     reg negative, zero, carry, overflow;
 
-    // Assign status flags to the output bus
-    assign status = {negative, zero, carry, overflow};
-    
+    // Assign status flags to the output bus    
     // Combinational logic for ALU operations
     always @(*) begin
         // Default values
@@ -29,7 +27,6 @@ module ALU (
             end
             4'b0010: begin // ADD, LDR, STR: result = in1 + in2 (a + b)
                 {carry, result} = a + b;
-                // Overflow for signed addition: (a[31] == b[31]) && (a[31] != result[31])
                 overflow = (a[31] == b[31]) && (a[31] != result[31]);
             end
             4'b0011: begin // ADC: result = in1 + in2 + C (a + b + carry_in)
@@ -38,14 +35,14 @@ module ALU (
                 overflow = (a[31] == b[31]) && (a[31] != result[31]);
             end
             4'b0100: begin // SUB, CMP: result = in1 - in2 (a - b)
-                {carry, result} = a + (~b) + 1; // Two's complement subtraction
+                {carry, result} = a + ~b + 1; // Two's complement subtraction
                 // Invert carry for subtraction (carry = NOT borrow)
                 carry = ~carry;
                 // Overflow for signed subtraction: (a[31] != b[31]) && (a[31] != result[31])
                 overflow = (a[31] != b[31]) && (a[31] != result[31]);
             end
             4'b0101: begin // SBC: result = in1 - in2 - ~C (a - b - ~carry_in)
-                {carry, result} = a + (~b) + carry_in; // Note: C=1 means no borrow
+                {carry, result} = (a + ~b) + carry_in; // Note: C=1 means no borrow
                 // Invert carry for subtraction with borrow
                 carry = ~carry;
                 // Overflow for signed subtraction with borrow
@@ -70,11 +67,11 @@ module ALU (
             end
         endcase
 
-        // Calculate common status flags
         zero = (result == 32'b0);
         negative = result[31];
     end
-    
+    assign status = {negative, zero, carry, overflow};
+
 endmodule
 
 module val2_gen (
@@ -87,12 +84,21 @@ module val2_gen (
     wire [7:0] imm_val = shift_op[7:0];
     wire [3:0] rotate_imm = shift_op[11:8];
     always @(*) begin
-        if (imm == 1'b1) begin
-            // Immediate value rotated
-            result = {{24'b0, imm_val},{24'b0, imm_val}} << rotate_imm;
+        if (mem_access == 1'b1) begin
+            result = shift_op;
+        end else if (imm == 1'b1) begin
+            result = {{24'b0, imm_val},{24'b0, imm_val}} >> (rotate_imm * 2);
         end else begin
-            // Register value
-            result = val_rem;
+            case(imm_val[6:5])
+               2'b00:
+                  result = val_rem << (shift_op[11:7]);
+               2'b01:
+                  result = val_rem >> (shift_op[11:7]);
+               2'b10:
+                  result = val_rem >>> (shift_op[11:7]);
+               2'b11:
+                result = {{24'b0, val_rem},{24'b0, val_rem}} >> (shift_op[11:7]);
+            endcase
         end
     end
 endmodule
@@ -127,7 +133,8 @@ module exe_stage(
         .result(val_2)
     );
     
-    assign br_addr = pc + signed_imm_24;
+    wire [31:0] signed_imm_32 = {{8{signed_imm_24[23]}}, signed_imm_24};
+    assign br_addr = pc + signed_imm_32;
 
     ALU alu (
         .a(val_rn),

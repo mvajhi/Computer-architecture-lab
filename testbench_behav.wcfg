@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="30257066000fs"></ZoomStartTime>
+      <ZoomEndTime time="30994066001fs"></ZoomEndTime>
+      <Cursor1Time time="5036066000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="96"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="14" />
+   <wvobject fp_name="/testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/hazard" type="logic">
+      <obj_property name="ElementShortName">hazard</obj_property>
+      <obj_property name="ObjectShortName">hazard</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/status" type="array">
+      <obj_property name="ElementShortName">status[3:0]</obj_property>
+      <obj_property name="ObjectShortName">status[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/rst" type="logic">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/inst_rn" type="array">
+      <obj_property name="ElementShortName">inst_rn[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_rn[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/inst_rm" type="array">
+      <obj_property name="ElementShortName">inst_rm[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_rm[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/inst_dest" type="array">
+      <obj_property name="ElementShortName">inst_dest[3:0]</obj_property>
+      <obj_property name="ObjectShortName">inst_dest[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/value_to_dest" type="array">
+      <obj_property name="ElementShortName">value_to_dest[31:0]</obj_property>
+      <obj_property name="ObjectShortName">value_to_dest[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/write_enable" type="logic">
+      <obj_property name="ElementShortName">write_enable</obj_property>
+      <obj_property name="ObjectShortName">write_enable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/rn_value" type="array">
+      <obj_property name="ElementShortName">rn_value[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rn_value[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/rm_value" type="array">
+      <obj_property name="ElementShortName">rm_value[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rm_value[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory" type="array">
+      <obj_property name="ElementShortName">in_memory[0:15][31:0]</obj_property>
+      <obj_property name="ObjectShortName">in_memory[0:15][31:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[0]" type="array">
+         <obj_property name="ElementShortName">[0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[1]" type="array">
+         <obj_property name="ElementShortName">[1][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[2]" type="array">
+         <obj_property name="ElementShortName">[2][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[3]" type="array">
+         <obj_property name="ElementShortName">[3][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[3][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[4]" type="array">
+         <obj_property name="ElementShortName">[4][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[4][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[5]" type="array">
+         <obj_property name="ElementShortName">[5][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[6]" type="array">
+         <obj_property name="ElementShortName">[6][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[6][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[7]" type="array">
+         <obj_property name="ElementShortName">[7][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[7][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[8]" type="array">
+         <obj_property name="ElementShortName">[8][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[8][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[9]" type="array">
+         <obj_property name="ElementShortName">[9][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[9][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[10]" type="array">
+         <obj_property name="ElementShortName">[10][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[10][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[11]" type="array">
+         <obj_property name="ElementShortName">[11][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[11][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[12]" type="array">
+         <obj_property name="ElementShortName">[12][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[12][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[13]" type="array">
+         <obj_property name="ElementShortName">[13][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[13][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[14]" type="array">
+         <obj_property name="ElementShortName">[14][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[14][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/instruction_memory_i/reg_file_0/inst/in_memory[15]" type="array">
+         <obj_property name="ElementShortName">[15][31:0]</obj_property>
+         <obj_property name="ObjectShortName">[15][31:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>

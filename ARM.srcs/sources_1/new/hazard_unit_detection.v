@@ -9,13 +9,18 @@ module hazard_detection_unit(
     output hazard_detected
     );
     
-    // hazard detection logic
-    assign hazard_detected = 
-        // check if execute stage destination matches any source register and write back is enabled
-        ((src1 == exe_dest) && (exe_wb_en == 1'b1)) ||
-        ((src2 == exe_dest) && (exe_wb_en == 1'b1) && (two_src == 1'b1)) ||
-        // check if memory stage destination matches any source register and write back is enabled
-        ((src1 == mem_dest) && (mem_wb_en == 1'b1)) ||
-        ((src2 == mem_dest) && (mem_wb_en == 1'b1) && (two_src == 1'b1));
-    
+    wire hazard_from_exe;
+    wire hazard_from_mem;
+
+    assign hazard_from_exe = exe_wb_en && (
+        (src1 == exe_dest) ||
+        (two_src && (src2 == exe_dest))
+    );
+
+    assign hazard_from_mem = mem_wb_en && (
+        (src1 == mem_dest) ||
+        (two_src && (src2 == mem_dest))
+    );
+
+    assign hazard_detected = hazard_from_exe || hazard_from_mem;
 endmodule

@@ -1,1 +1,1 @@
---relax --debug typical --mt auto -L xlslice_v1_0_1 -L xil_defaultlib -L xlconcat_v2_1_1 -L xlconstant_v1_1_5 -L dist_mem_gen_v8_0_12 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot instruction_memory xil_defaultlib.instruction_memory xil_defaultlib.glbl -log elaborate.log
+--relax --debug typical --mt auto -L xil_defaultlib -L xlconcat_v2_1_1 -L dist_mem_gen_v8_0_12 -L xlslice_v1_0_1 -L xlconstant_v1_1_5 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot instruction_memory xil_defaultlib.instruction_memory xil_defaultlib.glbl -log elaborate.log

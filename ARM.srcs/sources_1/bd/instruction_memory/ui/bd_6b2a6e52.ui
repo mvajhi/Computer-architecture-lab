@@ -8,101 +8,103 @@ preplace port hazard -pg 1 -y -790 -defaultsOSRD
 preplace port clk -pg 1 -y -130 -defaultsOSRD
 preplace portBus status -pg 1 -y -760 -defaultsOSRD
 preplace portBus rst -pg 1 -y -180 -defaultsOSRD
-preplace inst ms_splittre_0 -pg 1 -lvl 16 -y 170 -defaultsOSRD
-preplace inst Register_2 -pg 1 -lvl 10 -y 130 -defaultsOSRD -resize 185 536
-preplace inst memory_0 -pg 1 -lvl 17 -y 190 -defaultsOSRD
-preplace inst hazard_detection_unit_0 -pg 1 -lvl 10 -y -410 -defaultsOSRD
-preplace inst Register_3 -pg 1 -lvl 15 -y 280 -defaultsOSRD -resize 211 556
+preplace inst Register_2 -pg 1 -lvl 9 -y 110 -defaultsOSRD -resize 185 536
+preplace inst ms_splittre_0 -pg 1 -lvl 15 -y 170 -defaultsOSRD
+preplace inst memory_0 -pg 1 -lvl 16 -y 130 -defaultsOSRD -resize 227 88
+preplace inst Register_3 -pg 1 -lvl 14 -y 280 -defaultsOSRD -resize 211 556
+preplace inst hazard_detection_unit_0 -pg 1 -lvl 9 -y -410 -defaultsOSRD
 preplace inst xlslice_0 -pg 1 -lvl 3 -y 240 -defaultsOSRD
-preplace inst Register_4 -pg 1 -lvl 19 -y 160 -defaultsOSRD -resize 258 574
-preplace inst xlconstant_0 -pg 1 -lvl 6 -y 210 -defaultsOSRD
-preplace inst status_reg_0 -pg 1 -lvl 12 -y 470 -defaultsOSRD -orient R180
+preplace inst Register_4 -pg 1 -lvl 20 -y 160 -defaultsOSRD -resize 258 574
+preplace inst xlconstant_0 -pg 1 -lvl 13 -y 220 -defaultsOSRD
+preplace inst status_reg_0 -pg 1 -lvl 11 -y 470 -defaultsOSRD -orient R180
+preplace inst xlconstant_1 -pg 1 -lvl 19 -y 130 -defaultsOSRD
 preplace inst dist_mem_gen_0 -pg 1 -lvl 4 -y 300 -defaultsOSRD
-preplace inst xlconstant_1 -pg 1 -lvl 1 -y 190 -defaultsOSRD
-preplace inst mux_0 -pg 1 -lvl 21 -y 280 -defaultsOSRD
-preplace inst xlconstant_2 -pg 1 -lvl 1 -y -30 -defaultsOSRD -resize 120 88
-preplace inst debouncer_0 -pg 1 -lvl 1 -y -170 -defaultsOSRD
-preplace inst reg_file_0 -pg 1 -lvl 8 -y 470 -defaultsOSRD
+preplace inst mux_0 -pg 1 -lvl 22 -y 280 -defaultsOSRD
+preplace inst dist_mem_gen_1 -pg 1 -lvl 17 -y 140 -defaultsOSRD
+preplace inst xlconstant_3 -pg 1 -lvl 8 -y 30 -defaultsOSRD
+preplace inst reg_file_0 -pg 1 -lvl 7 -y 470 -defaultsOSRD
 preplace inst xlconcat_0 -pg 1 -lvl 5 -y 350 -defaultsOSRD -orient R90
-preplace inst xlconcat_1 -pg 1 -lvl 9 -y 230 -defaultsOSRD
-preplace inst xlconcat_2 -pg 1 -lvl 14 -y 350 -defaultsOSRD
+preplace inst xlconcat_1 -pg 1 -lvl 8 -y 300 -defaultsOSRD
+preplace inst xlconcat_2 -pg 1 -lvl 13 -y 370 -defaultsOSRD
 preplace inst xlconcat_3 -pg 1 -lvl 18 -y 220 -defaultsOSRD
 preplace inst ila_0 -pg 1 -lvl 18 -y 530 -defaultsOSRD -orient R90
-preplace inst wbs_splittre_0 -pg 1 -lvl 20 -y 120 -defaultsOSRD
-preplace inst exe_splittre_0 -pg 1 -lvl 11 -y 130 -defaultsOSRD
-preplace inst instruction_decode_c_0 -pg 1 -lvl 8 -y 40 -defaultsOSRD
-preplace inst exe_stage_0 -pg 1 -lvl 13 -y 110 -defaultsOSRD
+preplace inst instruction_decode_c_0 -pg 1 -lvl 7 -y 40 -defaultsOSRD
 preplace inst if_comp_top_1 -pg 1 -lvl 2 -y 80 -defaultsOSRD
-preplace inst Register_1 -pg 1 -lvl 7 -y 230 -defaultsOSRD -resize 183 550
-preplace netloc wbs_splittre_0_alu_res 1 20 1 6220
-preplace netloc reg_file_0_rn_value 1 8 1 1890
-preplace netloc Register_3_reg_out 1 15 1 4470
-preplace netloc instruction_decode_c_0_b 1 8 1 1980J
-preplace netloc Register_4_reg_out 1 19 1 5900
-preplace netloc instruction_decode_c_0_two_src 1 8 2 2040J -220 2570
-preplace netloc instruction_decode_c_0_mem_w_en 1 8 1 2000J
-preplace netloc xlconcat_2_dout 1 14 1 4200
+preplace inst exe_stage_0 -pg 1 -lvl 12 -y 110 -defaultsOSRD
+preplace inst wbs_splittre_0 -pg 1 -lvl 21 -y 160 -defaultsOSRD
+preplace inst exe_splittre_0 -pg 1 -lvl 10 -y 130 -defaultsOSRD
+preplace inst Register_1 -pg 1 -lvl 6 -y 230 -defaultsOSRD -resize 183 550
+preplace netloc wbs_splittre_0_alu_res 1 21 1 6570
+preplace netloc reg_file_0_rn_value 1 7 1 1910
+preplace netloc Register_3_reg_out 1 14 1 4560
+preplace netloc instruction_decode_c_0_b 1 7 1 1960J
+preplace netloc Register_4_reg_out 1 20 1 N
+preplace netloc instruction_decode_c_0_two_src 1 7 2 2020J -250 2580
+preplace netloc instruction_decode_c_0_mem_w_en 1 7 1 1980J
+preplace netloc xlconcat_2_dout 1 13 1 4280
 preplace netloc if_comp_top_1_adder_res 1 2 3 NJ 70 NJ 70 230
-preplace netloc reg_file_0_rm_value 1 8 1 1960
-preplace netloc rst_1 1 1 18 -910 -70 N -70 N -70 N -70 N -70 740 -70 1110 -210 2000 -180 2550 -160 N -160 N -160 3610 -90 N -90 4210 -30 N -30 N -30 5280 N 5600
-preplace netloc exe_stage_0_br_addr 1 1 13 -900 -220 NJ -220 NJ -220 NJ -220 NJ -220 NJ -220 NJ -220 2020J -190 NJ -190 NJ -190 NJ -190 N -190 3960
-preplace netloc xlconcat_1_dout 1 9 1 2550
-preplace netloc rst_2 1 0 1 NJ
-preplace netloc exe_splittre_0_s_out 1 11 2 NJ 140 3600
-preplace netloc exe_splittre_0_dest 1 9 5 2580 420 2960 360 3280J 360 3620 400 N
-preplace netloc xlconcat_0_dout 1 5 2 450 450 750
-preplace netloc Register_1_reg_out 1 7 1 1090
-preplace netloc ms_splittre_0_wb_en 1 9 9 2610 -200 NJ -200 NJ -200 NJ -200 NJ -200 NJ -200 NJ -200 4770 70 5300
-preplace netloc hazard_detection_unit_0_hazard_detected 1 1 10 -890 460 N 460 N 460 N 460 N 460 740 530 1120 350 1900 460 2560 430 2950
-preplace netloc exe_stage_0_status 1 12 2 NJ 440 3960
-preplace netloc ms_splittre_0_alu_res 1 16 1 4780
-preplace netloc exe_splittre_0_b 1 6 6 760 -240 N -240 2030 -210 2560 -170 NJ -170 3280
-preplace netloc instruction_decode_c_0_imm 1 8 1 1950J
-preplace netloc if_comp_top_1_pc_to_im 1 2 1 -450
-preplace netloc exe_splittre_0_carry_in 1 11 2 3310 100 3640
-preplace netloc exe_splittre_0_imm 1 11 2 3290 170 N
-preplace netloc ms_splittre_0_mem_w_en 1 16 2 4790 90 5260
-preplace netloc exe_splittre_0_mem_r_en 1 11 3 N 60 3600 -50 3980
-preplace netloc instruction_decode_c_0_carry_in 1 8 1 1910
-preplace netloc wbs_splittre_0_dm_out 1 20 1 6200
-preplace netloc ms_splittre_0_rm_value 1 16 1 4770
+preplace netloc xlconstant_3_dout 1 8 1 2550
+preplace netloc reg_file_0_rm_value 1 7 1 2000
+preplace netloc rst_1 1 0 20 N -180 -1040 -80 N -80 N -80 N -80 450 -80 1110 -210 1930 -200 2550 -180 N -180 N -180 3650 -90 N -90 4290 -30 N -30 N -30 N -30 5420 N 5730 40 N
+preplace netloc exe_stage_0_br_addr 1 1 12 -1030 -240 NJ -240 NJ -240 NJ -240 NJ -240 NJ -240 2000J -230 NJ -230 NJ -230 NJ -230 N -230 4020
+preplace netloc xlconcat_1_dout 1 8 1 2560
+preplace netloc exe_splittre_0_s_out 1 10 2 NJ 140 3640
+preplace netloc exe_splittre_0_dest 1 8 5 2590 400 2950 360 3310J 360 3660 420 N
+preplace netloc xlconcat_0_dout 1 5 1 450
+preplace netloc Register_1_reg_out 1 6 1 1120
+preplace netloc ms_splittre_0_wb_en 1 8 10 2620 -220 NJ -220 NJ -220 NJ -220 NJ -220 NJ -220 NJ -220 4860 40 N 40 5430
+preplace netloc hazard_detection_unit_0_hazard_detected 1 1 9 -1050 190 -430 180 N 180 N 180 470 -70 1090J -230 1990J -220 2580J -210 2950
+preplace netloc exe_stage_0_status 1 11 2 NJ 440 4020
+preplace netloc ms_splittre_0_alu_res 1 15 3 4870 20 N 20 5450
+preplace netloc exe_splittre_0_b 1 1 10 -1020 180 -450 170 N 170 N 170 460 -250 N -250 2010 -240 2570 -190 NJ -190 3310
+preplace netloc instruction_decode_c_0_imm 1 7 1 1930J
+preplace netloc if_comp_top_1_pc_to_im 1 2 1 -440
+preplace netloc exe_splittre_0_carry_in 1 10 2 3340 100 3680
+preplace netloc exe_splittre_0_imm 1 10 2 3320 170 N
+preplace netloc dist_mem_gen_1_spo 1 17 1 5400
+preplace netloc xlconstant_1_dout 1 19 1 5930
+preplace netloc ms_splittre_0_mem_w_en 1 15 2 4900 200 5190
+preplace netloc exe_splittre_0_mem_r_en 1 10 3 N 60 3640 -50 4040
+preplace netloc instruction_decode_c_0_carry_in 1 7 1 1890
+preplace netloc wbs_splittre_0_dm_out 1 21 1 6550
+preplace netloc ms_splittre_0_rm_value 1 15 2 4890J 60 5190
 preplace netloc dist_mem_gen_0_spo 1 4 1 220
-preplace netloc Register_2_reg_out 1 10 1 N
-preplace netloc wbs_splittre_0_dest 1 7 14 1140 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 N 640 N 640 N 640 6180
-preplace netloc exe_splittre_0_wb_en 1 9 5 2600 -210 2960 -100 3290J -70 N -70 4000
-preplace netloc exe_splittre_0_pc_out 1 11 2 3300 120 3640
+preplace netloc Register_2_reg_out 1 9 1 2950
+preplace netloc wbs_splittre_0_dest 1 6 16 1140 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 NJ 640 N 640 N 640 N 640 N 640 N 640 6530
+preplace netloc exe_splittre_0_wb_en 1 8 5 2610 -240 N -240 3320J -70 N -70 4060
+preplace netloc exe_splittre_0_pc_out 1 10 2 3330 120 3680
 preplace netloc xlslice_0_Dout 1 3 1 -10
-preplace netloc exe_splittre_0_rn_value 1 11 2 3320 130 N
-preplace netloc instruction_decode_c_0_r1 1 7 2 1130 -200 1950
-preplace netloc instruction_decode_c_0_r2 1 7 2 1140 -190 1940
-preplace netloc xlconstant_2_dout 1 1 1 -930
-preplace netloc exe_splittre_0_signed_imm 1 11 2 3330 210 N
-preplace netloc instruction_decode_c_0_exe_cmd 1 8 1 1990J
-preplace netloc Net 1 0 19 -1390 -100 -920 -80 N -80 N -80 N -80 N -80 750 -80 1100 -230 2010 -200 2570 -180 N -180 N -180 3630 -80 N -80 4200 -20 N -20 N -20 5270 N 5580
-preplace netloc wbs_splittre_0_wb_en 1 7 14 1160 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 N 650 N 650 N 650 6190
-preplace netloc instruction_decode_c_0_mux_reg 1 8 1 2030J
-preplace netloc instruction_decode_c_0_dest 1 8 1 1920J
-preplace netloc ms_splittre_0_mem_r_en 1 16 2 4780 80 5290
-preplace netloc instruction_decode_c_0_s_out 1 8 1 1970J
-preplace netloc wbs_splittre_0_mem_r_en 1 20 1 6210
-preplace netloc instruction_decode_c_0_signed_imm 1 8 1 1930J
-preplace netloc exe_splittre_0_mem_w_en 1 11 3 N 80 3590 -60 3990
-preplace netloc instruction_decode_c_0_shift_op 1 8 1 1940J
-preplace netloc instruction_decode_c_0_pc_out 1 8 1 1960J
-preplace netloc ms_splittre_0_dest 1 9 9 2590J 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 4770 290 5300
-preplace netloc xlconcat_3_dout 1 18 1 5590
-preplace netloc exe_splittre_0_rm_value 1 11 3 N 280 3640 380 N
-preplace netloc instruction_decode_c_0_mem_r_en 1 8 1 2010J
-preplace netloc mux_0_wb_out 1 7 15 1170 630 NJ 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 6500
-preplace netloc status_reg_0_reg_out 1 7 5 1150 590 2050 470 N 470 N 470 N
-preplace netloc instruction_decode_c_0_rm 1 8 2 2060J -230 2560
-preplace netloc exe_stage_0_alu_result 1 13 1 3970
-preplace netloc instruction_decode_c_0_rn 1 8 2 2050J -240 2550
-preplace netloc memory_0_mem_result 1 17 1 5250
-preplace netloc instruction_decode_c_0_wb_en 1 8 1 2020J
-preplace netloc exe_splittre_0_exe_cmd 1 11 2 3300 30 N
-preplace netloc exe_splittre_0_shift_op 1 11 2 3330 190 N
-levelinfo -pg 1 -1410 -1070 -610 -110 120 370 660 970 1730 2440 2800 3120 3460 3800 4100 4340 4620 5100 5450 5750 6040 6360 6520 -top -830 -bot 1250
+preplace netloc exe_splittre_0_rn_value 1 10 2 3350 130 N
+preplace netloc instruction_decode_c_0_r1 1 6 2 1130 -200 1920
+preplace netloc instruction_decode_c_0_r2 1 6 2 1140 -190 1910
+preplace netloc exe_splittre_0_signed_imm 1 10 2 3360 210 N
+preplace netloc instruction_decode_c_0_exe_cmd 1 7 1 1970J
+preplace netloc Net 1 0 20 N -130 -1050 -90 N -90 N -90 N -90 480 -90 1100 -220 1940 -210 2560 -200 N -200 N -200 3670 -80 N -80 4280 -20 N -20 N -20 5200 50 5410 N 5720 -80 N
+preplace netloc wbs_splittre_0_wb_en 1 6 16 1160 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 NJ 650 N 650 N 650 N 650 N 650 N 650 6540
+preplace netloc instruction_decode_c_0_mux_reg 1 7 1 2010J
+preplace netloc instruction_decode_c_0_dest 1 7 1 1900J
+preplace netloc ms_splittre_0_mem_r_en 1 15 3 4880 30 N 30 5440
+preplace netloc instruction_decode_c_0_s_out 1 7 1 1950J
+preplace netloc wbs_splittre_0_mem_r_en 1 21 1 6560
+preplace netloc instruction_decode_c_0_signed_imm 1 7 1 1910J
+preplace netloc exe_splittre_0_mem_w_en 1 10 3 N 80 3630 -60 4050
+preplace netloc instruction_decode_c_0_shift_op 1 7 1 1920J
+preplace netloc instruction_decode_c_0_pc_out 1 7 1 1940J
+preplace netloc ms_splittre_0_dest 1 8 10 2600J 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 NJ 580 4880 260 N 260 N
+preplace netloc memory_0_mem_addr_out 1 16 1 5180
+preplace netloc exe_splittre_0_rm_value 1 10 3 N 280 3680 400 N
+preplace netloc xlconcat_3_dout 1 18 2 N 220 5920
+preplace netloc instruction_decode_c_0_mem_r_en 1 7 1 1990J
+preplace netloc mux_0_wb_out 1 6 17 1170 630 NJ 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 N 630 6860
+preplace netloc status_reg_0_reg_out 1 6 5 1150 590 N 590 2560 470 N 470 N
+preplace netloc instruction_decode_c_0_rm 1 7 2 2040J -260 2570
+preplace netloc xlconstant_0_dout 1 13 1 4290
+preplace netloc exe_stage_0_alu_result 1 12 1 4030
+preplace netloc instruction_decode_c_0_rn 1 7 2 2030J -270 2560
+preplace netloc instruction_decode_c_0_wb_en 1 7 1 2000J
+preplace netloc exe_splittre_0_exe_cmd 1 10 2 3330 30 N
+preplace netloc exe_splittre_0_shift_op 1 10 2 3360 190 N
+levelinfo -pg 1 -1410 -1070 -610 -110 120 370 970 1730 2440 2800 3150 3500 3860 4180 4430 4710 5040 5300 5590 5840 6080 6390 6720 6880 -top -830 -bot 1250
 "
 }
 {

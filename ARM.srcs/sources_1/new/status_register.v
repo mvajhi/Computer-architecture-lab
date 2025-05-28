@@ -28,11 +28,13 @@ module status_reg (
     output reg [3:0] reg_out
 );
 
-    always @(posedge clk, negedge rst) begin
-        if (rst) begin
-            reg_out <= 4'b0;
+    always @(negedge clk, negedge rst) begin
+        if (~rst) begin
+            reg_out <= 4'b1110;
+//            reg_out <= 4'b1110;
         end else if (s) begin
             reg_out <= reg_in;
+//            reg_out <= 4'b1110;
         end
     end
 

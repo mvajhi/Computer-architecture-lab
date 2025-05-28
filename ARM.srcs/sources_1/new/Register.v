@@ -30,10 +30,10 @@ module Register #(parameter size=32)(
     );
     always @(posedge clk, negedge rst)begin
         if(~rst) begin
-            reg_out <= 32'b0;
+            reg_out <= 200'b0;
         end
         else if(flush) begin
-            reg_out <= 32'b0;
+            reg_out <= 200'b0;
         end
         else if(~freeze) begin
             reg_out <= reg_in;
