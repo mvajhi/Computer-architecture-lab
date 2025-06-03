@@ -63,7 +63,23 @@ module instruction_memory_reg_file_0_0 (
   value_to_dest,
   write_enable,
   rn_value,
-  rm_value
+  rm_value,
+  reg_0,
+  reg_1,
+  reg_2,
+  reg_3,
+  reg_4,
+  reg_5,
+  reg_6,
+  reg_7,
+  reg_8,
+  reg_9,
+  reg_10,
+  reg_11,
+  reg_12,
+  reg_13,
+  reg_14,
+  reg_15
 );
 
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME clk, ASSOCIATED_RESET rst, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *)
@@ -79,6 +95,22 @@ input wire [31 : 0] value_to_dest;
 input wire write_enable;
 output wire [31 : 0] rn_value;
 output wire [31 : 0] rm_value;
+output wire [31 : 0] reg_0;
+output wire [31 : 0] reg_1;
+output wire [31 : 0] reg_2;
+output wire [31 : 0] reg_3;
+output wire [31 : 0] reg_4;
+output wire [31 : 0] reg_5;
+output wire [31 : 0] reg_6;
+output wire [31 : 0] reg_7;
+output wire [31 : 0] reg_8;
+output wire [31 : 0] reg_9;
+output wire [31 : 0] reg_10;
+output wire [31 : 0] reg_11;
+output wire [31 : 0] reg_12;
+output wire [31 : 0] reg_13;
+output wire [31 : 0] reg_14;
+output wire [31 : 0] reg_15;
 
   reg_file inst (
     .clk(clk),
@@ -89,6 +121,22 @@ output wire [31 : 0] rm_value;
     .value_to_dest(value_to_dest),
     .write_enable(write_enable),
     .rn_value(rn_value),
-    .rm_value(rm_value)
+    .rm_value(rm_value),
+    .reg_0(reg_0),
+    .reg_1(reg_1),
+    .reg_2(reg_2),
+    .reg_3(reg_3),
+    .reg_4(reg_4),
+    .reg_5(reg_5),
+    .reg_6(reg_6),
+    .reg_7(reg_7),
+    .reg_8(reg_8),
+    .reg_9(reg_9),
+    .reg_10(reg_10),
+    .reg_11(reg_11),
+    .reg_12(reg_12),
+    .reg_13(reg_13),
+    .reg_14(reg_14),
+    .reg_15(reg_15)
   );
 endmodule

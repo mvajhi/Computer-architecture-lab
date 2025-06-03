@@ -70,6 +70,7 @@ vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../ARM.srcs/sources_1/bd/inst
 "../../../bd/instruction_memory/ip/instruction_memory_dist_mem_gen_1_0/sim/instruction_memory_dist_mem_gen_1_0.v" \
 "../../../bd/instruction_memory/ip/instruction_memory_memory_0_1/sim/instruction_memory_memory_0_1.v" \
 "../../../bd/instruction_memory/ip/instruction_memory_xlconstant_3_0/sim/instruction_memory_xlconstant_3_0.v" \
+"../../../bd/instruction_memory/ip/instruction_memory_debouncer_0_0/sim/instruction_memory_debouncer_0_0.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed May 28 13:41:40 2025
+//Date        : Wed May 28 15:15:41 2025
 //Host        : DESKTOP-H8247UF running 64-bit major release  (build 9200)
 //Command     : generate_target instruction_memory.bd
 //Design      : instruction_memory
@@ -9,7 +9,7 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "instruction_memory,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=instruction_memory,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=26,numReposBlks=26,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=15,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=5,synth_mode=OOC_per_BD}" *) (* HW_HANDOFF = "instruction_memory.hwdef" *) 
+(* CORE_GENERATION_INFO = "instruction_memory,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=instruction_memory,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=27,numReposBlks=27,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=16,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=5,synth_mode=OOC_per_BD}" *) (* HW_HANDOFF = "instruction_memory.hwdef" *) 
 module instruction_memory
    (clk,
     hazard,
@@ -25,6 +25,7 @@ module instruction_memory
   wire [159:0]Register_2_reg_out;
   wire [70:0]Register_3_reg_out;
   wire [69:0]Register_4_reg_out;
+  wire [0:0]debouncer_0_SIGNAL_O;
   wire [31:0]dist_mem_gen_0_spo;
   wire [31:0]dist_mem_gen_1_spo;
   wire exe_splittre_0_b;
@@ -73,6 +74,12 @@ module instruction_memory
   wire [31:0]ms_splittre_0_rm_value;
   wire ms_splittre_0_wb_en;
   wire [31:0]mux_0_wb_out;
+  wire [31:0]reg_file_0_reg_0;
+  wire [31:0]reg_file_0_reg_1;
+  wire [31:0]reg_file_0_reg_2;
+  wire [31:0]reg_file_0_reg_3;
+  wire [31:0]reg_file_0_reg_4;
+  wire [31:0]reg_file_0_reg_5;
   wire [31:0]reg_file_0_rm_value;
   wire [31:0]reg_file_0_rn_value;
   wire [0:0]rst_1;
@@ -99,28 +106,32 @@ module instruction_memory
         .freeze(hazard_detection_unit_0_hazard_detected),
         .reg_in(xlconcat_0_dout),
         .reg_out(Register_1_reg_out),
-        .rst(rst_1));
+        .rst(debouncer_0_SIGNAL_O));
   instruction_memory_Register_1_0 Register_2
        (.clk(Net),
         .flush(exe_splittre_0_b),
         .freeze(xlconstant_3_dout),
         .reg_in(xlconcat_1_dout),
         .reg_out(Register_2_reg_out),
-        .rst(rst_1));
+        .rst(debouncer_0_SIGNAL_O));
   instruction_memory_Register_2_0 Register_3
        (.clk(Net),
         .flush(xlconstant_0_dout),
         .freeze(xlconstant_0_dout),
         .reg_in(xlconcat_2_dout),
         .reg_out(Register_3_reg_out),
-        .rst(rst_1));
+        .rst(debouncer_0_SIGNAL_O));
   instruction_memory_Register_4_0 Register_4
        (.clk(Net),
         .flush(xlconstant_1_dout),
         .freeze(xlconstant_1_dout),
         .reg_in(xlconcat_3_dout),
         .reg_out(Register_4_reg_out),
-        .rst(rst_1));
+        .rst(debouncer_0_SIGNAL_O));
+  instruction_memory_debouncer_0_0 debouncer_0
+       (.CLK_I(Net),
+        .SIGNAL_I(rst_1),
+        .SIGNAL_O(debouncer_0_SIGNAL_O));
   instruction_memory_dist_mem_gen_0_0 dist_mem_gen_0
        (.a(xlslice_0_Dout),
         .spo(dist_mem_gen_0_spo));
@@ -177,15 +188,16 @@ module instruction_memory
         .clk(Net),
         .freeze(hazard_detection_unit_0_hazard_detected),
         .pc_to_im(if_comp_top_1_pc_to_im),
-        .rst(rst_1));
+        .rst(debouncer_0_SIGNAL_O));
   instruction_memory_ila_0_1 ila_0
        (.clk(Net),
-        .probe0(rst_1),
-        .probe1({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe2({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe3({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe4({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}),
-        .probe5({1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0,1'b0}));
+        .probe0(debouncer_0_SIGNAL_O),
+        .probe1(reg_file_0_reg_0),
+        .probe2(reg_file_0_reg_1),
+        .probe3(reg_file_0_reg_2),
+        .probe4(reg_file_0_reg_3),
+        .probe5(reg_file_0_reg_4),
+        .probe6(reg_file_0_reg_5));
   instruction_memory_instruction_decode_c_0_2 instruction_decode_c_0
        (.b(instruction_decode_c_0_b),
         .carry_in(instruction_decode_c_0_carry_in),
@@ -229,16 +241,22 @@ module instruction_memory
         .inst_dest(wbs_splittre_0_dest),
         .inst_rm(instruction_decode_c_0_r2),
         .inst_rn(instruction_decode_c_0_r1),
+        .reg_0(reg_file_0_reg_0),
+        .reg_1(reg_file_0_reg_1),
+        .reg_2(reg_file_0_reg_2),
+        .reg_3(reg_file_0_reg_3),
+        .reg_4(reg_file_0_reg_4),
+        .reg_5(reg_file_0_reg_5),
         .rm_value(reg_file_0_rm_value),
         .rn_value(reg_file_0_rn_value),
-        .rst(rst_1),
+        .rst(debouncer_0_SIGNAL_O),
         .value_to_dest(mux_0_wb_out),
         .write_enable(wbs_splittre_0_wb_en));
   instruction_memory_status_reg_0_0 status_reg_0
        (.clk(Net),
         .reg_in(exe_stage_0_status),
         .reg_out(status_reg_0_reg_out),
-        .rst(rst_1),
+        .rst(debouncer_0_SIGNAL_O),
         .s(exe_splittre_0_s_out));
   instruction_memory_wbs_splittre_0_0 wbs_splittre_0
        (.alu_res(wbs_splittre_0_alu_res),
