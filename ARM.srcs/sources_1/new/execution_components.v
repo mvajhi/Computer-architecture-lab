@@ -116,6 +116,12 @@ module exe_stage(
     input imm,
     input [11:0] shift_operand,
     input [23:0] signed_imm_24,
+
+    input [1:0] sel_src1,
+    input [1:0] sel_src2,
+    input [31:0] val_forward_mem,
+    input [31:0] val_forward_wb,
+    
     output [31:0] alu_result,
     output [31:0] br_addr,
     output [3:0] status
@@ -123,10 +129,38 @@ module exe_stage(
 
     wire mem_access = mem_r_en || mem_w_en;
 
+
+///////////////////////////////////////////////
+    reg [31:0] val_rm_fw;
+
+    always @(*) begin
+        case (sel_src2)
+            2'b00: val_rm_fw = val_rm;
+            2'b01: val_rm_fw = val_forward_mem;
+            2'b10: val_rm_fw = val_forward_wb;
+            
+            2'b11: val_rm_fw = val_rm;
+        endcase
+    end
+
+    reg [31:0] val_rn_fw;
+
+    always @(*) begin
+        case (sel_src1)
+            2'b00: val_rn_fw = val_rn;
+            2'b01: val_rn_fw = val_forward_mem;
+            2'b10: val_rn_fw = val_forward_wb;
+            
+            2'b11: val_rn_fw = val_rn;
+        endcase
+    end
+
+///////////////////////////////////////////////
+
     wire [31:0] val_2;
 
     val2_gen vg (
-        .val_rem(val_rm),
+        .val_rem(val_rm_fw),
         .shift_op(shift_operand),
         .imm(imm),
         .mem_access(mem_access),
@@ -137,7 +171,7 @@ module exe_stage(
     assign br_addr = pc + signed_imm_32;
 
     ALU alu (
-        .a(val_rn),
+        .a(val_rn_fw),
         .b(val_2),
         .carry_in(carry_in),
         .opcode(exe_cmd),

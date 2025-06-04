@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed May 28 15:15:41 2025
+//Date        : Tue Jun  3 16:25:36 2025
 //Host        : DESKTOP-H8247UF running 64-bit major release  (build 9200)
 //Command     : generate_target instruction_memory_wrapper.bd
 //Design      : instruction_memory_wrapper
@@ -11,22 +11,14 @@
 
 module instruction_memory_wrapper
    (clk,
-    hazard,
-    rst,
-    status);
+    rst);
   input clk;
-  input hazard;
   input [0:0]rst;
-  input [3:0]status;
 
   wire clk;
-  wire hazard;
   wire [0:0]rst;
-  wire [3:0]status;
 
   instruction_memory instruction_memory_i
        (.clk(clk),
-        .hazard(hazard),
-        .rst(rst),
-        .status(status));
+        .rst(rst));
 endmodule

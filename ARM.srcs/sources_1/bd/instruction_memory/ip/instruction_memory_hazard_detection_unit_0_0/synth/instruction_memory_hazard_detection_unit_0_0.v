@@ -63,6 +63,8 @@ module instruction_memory_hazard_detection_unit_0_0 (
   mem_dest,
   mem_wb_en,
   two_src,
+  exe_mem_r_en,
+  fw_en,
   hazard_detected
 );
 
@@ -73,6 +75,8 @@ input wire exe_wb_en;
 input wire [3 : 0] mem_dest;
 input wire mem_wb_en;
 input wire two_src;
+input wire exe_mem_r_en;
+input wire fw_en;
 output wire hazard_detected;
 
   hazard_detection_unit inst (
@@ -83,6 +87,8 @@ output wire hazard_detected;
     .mem_dest(mem_dest),
     .mem_wb_en(mem_wb_en),
     .two_src(two_src),
+    .exe_mem_r_en(exe_mem_r_en),
+    .fw_en(fw_en),
     .hazard_detected(hazard_detected)
   );
 endmodule

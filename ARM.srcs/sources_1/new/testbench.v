@@ -21,9 +21,9 @@
 
 
 module testbench();
-    reg clk = 1'b1, rst = 1'b1, hazard = 1'b0;
+    reg clk = 1'b1, rst = 1'b1;
     reg [3:0] status = 4'b0000;
-    instruction_memory_wrapper uut(.clk(clk), .rst(rst), .status(status), .hazard(hazard));
+    instruction_memory_wrapper uut(.clk(clk), .rst(rst));
     always #50 clk = ~clk;
     initial begin
         rst = 1'b0;

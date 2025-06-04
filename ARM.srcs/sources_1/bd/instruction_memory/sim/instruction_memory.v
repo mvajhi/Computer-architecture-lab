@@ -1,7 +1,7 @@
 //Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-//Date        : Wed May 28 15:15:41 2025
+//Date        : Tue Jun  3 16:25:36 2025
 //Host        : DESKTOP-H8247UF running 64-bit major release  (build 9200)
 //Command     : generate_target instruction_memory.bd
 //Design      : instruction_memory
@@ -9,16 +9,12 @@
 //--------------------------------------------------------------------------------
 `timescale 1 ps / 1 ps
 
-(* CORE_GENERATION_INFO = "instruction_memory,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=instruction_memory,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=27,numReposBlks=27,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=16,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=5,synth_mode=OOC_per_BD}" *) (* HW_HANDOFF = "instruction_memory.hwdef" *) 
+(* CORE_GENERATION_INFO = "instruction_memory,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=instruction_memory,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=29,numReposBlks=29,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=17,numPkgbdBlks=0,bdsource=USER,da_clkrst_cnt=5,synth_mode=OOC_per_BD}" *) (* HW_HANDOFF = "instruction_memory.hwdef" *) 
 module instruction_memory
    (clk,
-    hazard,
-    rst,
-    status);
+    rst);
   input clk;
-  input hazard;
   input [0:0]rst;
-  input [3:0]status;
 
   wire Net;
   wire [63:0]Register_1_reg_out;
@@ -36,7 +32,9 @@ module instruction_memory
   wire exe_splittre_0_mem_r_en;
   wire exe_splittre_0_mem_w_en;
   wire [31:0]exe_splittre_0_pc_out;
+  wire [3:0]exe_splittre_0_rm;
   wire [31:0]exe_splittre_0_rm_value;
+  wire [3:0]exe_splittre_0_rn;
   wire [31:0]exe_splittre_0_rn_value;
   wire exe_splittre_0_s_out;
   wire [11:0]exe_splittre_0_shift_op;
@@ -45,6 +43,8 @@ module instruction_memory
   wire [31:0]exe_stage_0_alu_result;
   wire [31:0]exe_stage_0_br_addr;
   wire [3:0]exe_stage_0_status;
+  wire [1:0]forward_unit_detecti_0_sel_src1;
+  wire [1:0]forward_unit_detecti_0_sel_src2;
   wire hazard_detection_unit_0_hazard_detected;
   wire [31:0]if_comp_top_1_adder_res;
   wire [31:0]if_comp_top_1_pc_to_im;
@@ -95,6 +95,7 @@ module instruction_memory
   wire [69:0]xlconcat_3_dout;
   wire [0:0]xlconstant_0_dout;
   wire [0:0]xlconstant_1_dout;
+  wire [0:0]xlconstant_2_dout;
   wire [0:0]xlconstant_3_dout;
   wire [12:0]xlslice_0_Dout;
 
@@ -151,7 +152,9 @@ module instruction_memory
         .mem_w_en(exe_splittre_0_mem_w_en),
         .pc_out(exe_splittre_0_pc_out),
         .reg_input(Register_2_reg_out),
+        .rm(exe_splittre_0_rm),
         .rm_value(exe_splittre_0_rm_value),
+        .rn(exe_splittre_0_rn),
         .rn_value(exe_splittre_0_rn_value),
         .s_out(exe_splittre_0_s_out),
         .shift_op(exe_splittre_0_shift_op),
@@ -167,14 +170,30 @@ module instruction_memory
         .mem_r_en(exe_splittre_0_mem_r_en),
         .mem_w_en(exe_splittre_0_mem_w_en),
         .pc(exe_splittre_0_pc_out),
+        .sel_src1(forward_unit_detecti_0_sel_src1),
+        .sel_src2(forward_unit_detecti_0_sel_src2),
         .shift_operand(exe_splittre_0_shift_op),
         .signed_imm_24(exe_splittre_0_signed_imm),
         .status(exe_stage_0_status),
+        .val_forward_mem(ms_splittre_0_alu_res),
+        .val_forward_wb(mux_0_wb_out),
         .val_rm(exe_splittre_0_rm_value),
         .val_rn(exe_splittre_0_rn_value));
+  instruction_memory_forward_unit_detecti_0_0 forward_unit_detecti_0
+       (.fw_en(xlconstant_2_dout),
+        .mem_dest(ms_splittre_0_dest),
+        .mem_wb_en(ms_splittre_0_wb_en),
+        .sel_src1(forward_unit_detecti_0_sel_src1),
+        .sel_src2(forward_unit_detecti_0_sel_src2),
+        .src1_exe(exe_splittre_0_rn),
+        .src2_exe(exe_splittre_0_rm),
+        .wb_dest(wbs_splittre_0_dest),
+        .wb_wb_en(wbs_splittre_0_wb_en));
   instruction_memory_hazard_detection_unit_0_0 hazard_detection_unit_0
        (.exe_dest(exe_splittre_0_dest),
+        .exe_mem_r_en(exe_splittre_0_mem_r_en),
         .exe_wb_en(exe_splittre_0_wb_en),
+        .fw_en(xlconstant_2_dout),
         .hazard_detected(hazard_detection_unit_0_hazard_detected),
         .mem_dest(ms_splittre_0_dest),
         .mem_wb_en(ms_splittre_0_wb_en),
@@ -258,6 +277,9 @@ module instruction_memory
         .reg_out(status_reg_0_reg_out),
         .rst(debouncer_0_SIGNAL_O),
         .s(exe_splittre_0_s_out));
+  instruction_memory_vio_0_0 vio_0
+       (.clk(Net),
+        .probe_out0(xlconstant_2_dout));
   instruction_memory_wbs_splittre_0_0 wbs_splittre_0
        (.alu_res(wbs_splittre_0_alu_res),
         .dest(wbs_splittre_0_dest),

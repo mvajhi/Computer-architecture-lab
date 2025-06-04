@@ -66,6 +66,10 @@ module instruction_memory_exe_stage_0_0 (
   imm,
   shift_operand,
   signed_imm_24,
+  sel_src1,
+  sel_src2,
+  val_forward_mem,
+  val_forward_wb,
   alu_result,
   br_addr,
   status
@@ -84,6 +88,10 @@ input wire [31 : 0] val_rm;
 input wire imm;
 input wire [11 : 0] shift_operand;
 input wire [23 : 0] signed_imm_24;
+input wire [1 : 0] sel_src1;
+input wire [1 : 0] sel_src2;
+input wire [31 : 0] val_forward_mem;
+input wire [31 : 0] val_forward_wb;
 output wire [31 : 0] alu_result;
 output wire [31 : 0] br_addr;
 output wire [3 : 0] status;
@@ -100,6 +108,10 @@ output wire [3 : 0] status;
     .imm(imm),
     .shift_operand(shift_operand),
     .signed_imm_24(signed_imm_24),
+    .sel_src1(sel_src1),
+    .sel_src2(sel_src2),
+    .val_forward_mem(val_forward_mem),
+    .val_forward_wb(val_forward_wb),
     .alu_result(alu_result),
     .br_addr(br_addr),
     .status(status)
